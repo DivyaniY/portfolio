@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({
     extended:true
 }))
-mongoose.connect('mongodb://localhost:27017/contact')
+mongoose.connect('mongodb://localhost:27017/users')
 var db=mongoose.connection
 db.on('error',()=> console.log("Error in connecting to database"))
 db.once('open',()=>console.log("connected to Database"))
