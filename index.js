@@ -1,6 +1,6 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -10,31 +10,27 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Hardcoded MongoDB connection URI
-const mongoURI = "mongodb://localhost:27017/users";
+// MongoDB Atlas connection URI
+const mongoURI = "mongodb+srv://divyani21beitv125:n6LSg9OSRBqiqqxI@users.djfqkmn.mongodb.net/users";
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', () => console.log("Error in connecting to database"));
 db.once('open', () => console.log("Connected to Database"));
 
 app.post("/contact_form", (req, res) => {
-    var name = req.body.name;
-    var email = req.body.email;
-    var phone = req.body.phone;
-    var subject = req.body.subject;
-    var message = req.body.message;
+    const { name, email, phone, subject, message } = req.body;
 
-    var data = {
-        "name": name,
-        "email": email,
-        "phone": phone,
-        "subject": subject,
-        "message": message
+    const data = {
+        name,
+        email,
+        phone,
+        subject,
+        message
     };
 
     db.collection('users').insertOne(data, (err, collection) => {
@@ -52,6 +48,9 @@ app.get("/", (req, res) => {
         "Allow-acces-Allow-Origin": '*'
     });
     return res.redirect('index.html');
-}).listen(3000);
+});
 
-console.log("Listening on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
