@@ -10,46 +10,40 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// MongoDB Atlas connection URI
-const mongoURI = "mongodb://localhost:27017//users";
-
-mongoose.connect(mongoURI, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-}).then(() => {
-    console.log("Connected to MongoDB");
-}).catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-});
-
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/users'); 
 const db = mongoose.connection;
-db.on('error', (err) => console.error("Error in database connection:", err));
+db.on('error', () => console.error("Error connecting to database"));
 db.once('open', () => console.log("Connected to Database"));
 
-app.post("/contact_form", async (req, res) => {
-    const { name, email, phone, subject, message } = req.body;
+app.post("/contact_form", (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const subject = req.body.subject;
+    const message = req.body.message;
 
     const data = {
-        name,
-        email,
-        phone,
-        subject,
-        message
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "subject": subject,
+        "message": message
     };
 
-    try {
-        const result = await db.collection('users').insertOne(data);
+    db.collection('users').insertOne(data, (err, collection) => {
+        if (err) {
+            console.error("Error inserting record:", err);
+            return res.status(500).send("Error occurred while saving data");
+        }
         console.log("Record Inserted successfully");
         return res.redirect('success.html');
-    } catch (error) {
-        console.error("Error inserting record:", error);
-        return res.status(500).send("Error occurred while saving data");
-    }
+    });
 });
 
 app.get("/", (req, res) => {
     res.set({
-        "Allow-acces-Allow-Origin": '*'
+        "Access-Control-Allow-Origin": '*'
     });
     return res.redirect('index.html');
 });
