@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Connect to MongoDB
+
 mongoose.connect('mongodb://localhost:27017/users'); 
 const db = mongoose.connection;
 db.on('error', () => console.error("Error connecting to database"));
