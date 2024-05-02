@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// Use environment variable for MongoDB connection URI
-const mongoURI = process.env.MONGODB_URI;
+// Hardcoded MongoDB connection URI
+const mongoURI = "mongodb://localhost:27017/users";
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
