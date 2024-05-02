@@ -14,12 +14,12 @@ app.use(bodyParser.urlencoded({
 const mongoURI = "mongodb+srv://divyani21beitv125:n6LSg9OSRBqiqqxI@users.djfqkmn.mongodb.net/users";
 
 mongoose.connect(mongoURI, { 
-    useCreateIndex: true // Ensure index creation
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
 }).then(() => {
     console.log("Connected to MongoDB");
 }).catch((error) => {
     console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // Exit the application if connection fails
 });
 
 const db = mongoose.connection;
