@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // MongoDB Atlas connection URI
-const mongoURI = "mongodb+srv://divyani21beitv125:n6LSg9OSRBqiqqxI@users.djfqkmn.mongodb.net/users";
+const mongoURI = "mongodb://localhost:27017//users";
 
 mongoose.connect(mongoURI, { 
     useNewUrlParser: true, 
