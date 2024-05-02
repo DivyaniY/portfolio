@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+           <!-- <a href="#services">Services</a>-->
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hi, Myself</h3>
+            <h1>Divyani Yadav</h1>
+            <h3>And I'm a <span class="text"></span></h3>
+            <p>I am a frontend developer with a passion for creating engaging and user-friendly web experiences.</p>
+            <div class="social-media">
+                <a href="https://github.com/DivyaniY"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/divyani-yadav-/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-solid fa-address-book"></i></a>
+            </div>
+            <a href="DivyaniYadav_Resume.pdf" download class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="photo.jpeg" alt="profile photo">
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="photo.jpeg" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Frontend Developer</h3>
+            <p>Hey there! I'm Divyani Yadav, a frontend developer with a growing interest in backend technologies. Currently delving into backend development, I'm excited about learning new things and expanding my skill set. Always open to new challenges and eager to grow as a developer. Let's connect and explore the fascinating world of web development together!
+
+            </p>
+           <!-- <a href="#" class="btn">Read more</a> -->
+        </div>
+    </section>
+    <!--
+
+        <section class="services" id="services">
+            <h2 class="heading">My <span>Services</span></h2>
+            <div class="services-container">
+                <div class="services-box">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web Developement</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quidem ducimus tempora quo maiores similique voluptatem neque iure autem, quisquam eligendi dignissimos, asperiores amet ratione.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                
+                <div class="services-box">
+                    <i class="fa-solid fa-reply"></i>
+                    <h3>Responsive Web Design</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quidem ducimus tempora quo maiores similique voluptatem neque iure autem, quisquam eligendi dignissimos, asperiores amet ratione.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                
+                <div class="services-box">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quidem ducimus tempora quo maiores similique voluptatem neque iure autem, quisquam eligendi dignissimos, asperiores amet ratione.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </section>
+    -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading"> My <span>Projects</span></h2>
+        <div class="portfolio-container">
+            <a href="https://divyaniy.github.io/clone/" class="portfolio-box">
+                <img src="ecom.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Amazon Clone</h4>
+                    <p>I made amazon.com clone using HTML and CSS</p>
+                    <i class="fa-solid fa-arrow-up-right-from-square"> </i>
+                </div>
+            </a>
+            <a href="" class="portfolio-box">
+            <img src="ecom.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Portfolio Website</h4>
+                    <p>I made Portfolio Website using HTML,CSS,Javascript,NodeJs,ExpressJs and MongoDB</p>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </a>
+            <a href="https://divyaniy.github.io/todo-list-app/" class="portfolio-box">
+            <img src="ecom.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Todo-list app</h4>
+                    <p>I made Todo-list app  using React  and Tailwind CSS</p>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </a>
+
+
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="/contact_form" method="post">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name">
+                <input type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Mobile Number">
+                <input type="text" name="subject" placeholder="Email Subject">
+            </div>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
